@@ -1,0 +1,11 @@
+services:
+  haproxy:
+    image: haproxytech/haproxy-alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+      - haproxy-run:/run/haproxy
+      
+volumes:
+  haproxy-run:
